@@ -1,0 +1,43 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Customer Details</title>
+    <link rel="stylesheet" href="{% static 'styles/Customer.css' %}">
+  </head>
+  <body>
+
+      <form  action="transfer" method="POST"  >
+      <div class="table-container">
+      <table class="table" >
+      <h1 class="heading"> Customer Accounts </h1>
+      <thead class="table-danger">
+      <tr>
+        <th scope="col">A/c No.</th>
+        <th scope="col">Account Holder</th>
+        <th scope="col">Email Id</th>
+        <th scope="col">Current Balance</th>
+        <th scope="col">SELECT</th>
+      </tr>
+    </thead>
+
+      {% csrf_token %}
+   <tbody class="y">
+     <tr>
+     {% for dest in cus %}
+    <td> {{dest.accountnumber}} </td>
+    <td> {{dest.name}} </td>
+    <td> {{dest.email}} </td>
+    <td> {{dest.balance}} </td>
+
+    <td><button type="submit" name="submit" class="btn" value="{{dest.name}}">Transfer</button></td>
+
+    </tr>
+  </tbody>
+    {% endfor %}
+  </div>
+    </table>
+  </form>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Transactions History</title>
+    <link rel="stylesheet" href="{% static 'styles/trap.css' %}">
+  </head>
+  <body>
+     {% csrf_token %}
+
+    <div class="table-container">
+    <table class="table">
+    <h1 class="heading"> Transaction History </h1>
+    <thead class="table-danger">
+    <tr>
+      <th scope="col">Sender's Name</th>
+      <th scope="col">Sender's Account No.</th>
+      <th scope="col">Sender's Current Balance</th>
+      <th scope="col">Transfered Amount</th>
+      <th scope="col">Receiver's Name</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+
+
+  {% for j in history %}
+  <tbody>
+    <tr>
+      <td>{{j.source_name}}</td>
+      <td>{{j.source_accountnumber}}</td>
+      <td>{{j.available_balance}}</td>
+      <td>{{j.transfered_amount}}</td>
+      <td>{{j.destination_name}}</td>
+      <td>{{j.date}}</td>
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
+</div>
+</body>
+</html>

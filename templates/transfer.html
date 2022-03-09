@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>transfer Amount</title>
+    <link rel="stylesheet" href="{% static 'styles/Transfer.css' %}">
+    <div class="booking">
+    <p> Hi! {{cust_name.name}} </p>
+    <p>Email : {{cust_name.email}} </p>
+
+    <form action="transactions" method="POST" name="form1"  onsubmit="required()">
+    {% csrf_token %}
+    <label> To whom you want to Transfer </label><br>
+
+    <select name="to" class="r">
+
+    {% for i in all_details %}
+    <option>{{i.name}}</option>
+    {% endfor %}
+    </select><br>
+
+    <label> Enter the amount to be transfered </label><br>
+    <label> can't be empty </label><br>
+    <input type="number" name="amount" min="1" max="50000" required></br>
+
+    <button input type="submit" name="submit" class="btn btn-outline-danger btn-sm position-center"  value="{{cust_name.name}}">Confirm Transfer</button>
+
+</div>
+  </form>
+  </head>
+  <body>

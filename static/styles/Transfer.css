@@ -1,0 +1,83 @@
+body{
+  top:50%;
+  left:50%;
+  text-align: center;
+  background-color: darkgrey;
+  background-image: url('../img/money_transfer.jpg');
+  background-size: cover;
+}
+.booking{
+    border-radius: 20px;
+    width: 450px;
+    height: 550px;
+    background: black;
+    color: white;
+    top:50%;
+    left: 25%;
+    right:50%;
+    position: absolute;
+    font-size: 30px;
+    transform: translate(-50% , -50%);
+    box-sizing: border-box;
+    padding: 20px 20px;
+  }
+.booking button input[type='submit']{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+  }
+.booking  button input[type='submit']:hover{
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+    border-top: 70px;
+
+  }
+.booking input[type='number']{
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    height: 40px;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+
+  .r{
+    color: blue;
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    margin: 30px;
+  }
+button{
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #fb2525;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+.booking p{
+      margin:20px;
+      font-weight: bold;
+      font-style: italic;
+      font-family: cursive;
+      color: crimson;
+      padding-bottom: 10px;
+  }
+.booking label{
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
